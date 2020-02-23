@@ -16,7 +16,7 @@ public class MyLinkedList<E> implements Contact<E> {
         size++;
     }
 
-    private void add(E item, int index){
+    public void add(E item, int index){
         if(index > size || index < 0)
             throw new IndexOutOfBoundsException(Integer.toString(index));
         else if(index == 0)
@@ -72,8 +72,8 @@ public class MyLinkedList<E> implements Contact<E> {
 
     }
     @Override
-    public void add(Object item) {
-
+    public void add(E item) {
+        add(item,size);
     }
 
     @Override
@@ -89,8 +89,12 @@ public class MyLinkedList<E> implements Contact<E> {
     private static class Node<E>{
         private E data;
         private Node<E> next;
-        public E getData() { return data; }
-        public Node<E> getNext() { return next; }
+        public E getData() {
+            return data;
+        }
+        public Node<E> getNext() {
+            return next;
+        }
         public Node(E data, Node<E> next){
             this.data=data;
             this.next=next;
