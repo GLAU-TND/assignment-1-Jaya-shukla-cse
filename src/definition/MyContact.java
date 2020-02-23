@@ -41,7 +41,7 @@ public class MyContact implements Mycont {
             String s=sc.next();
             char at=s.charAt(0);
             if(s.length()>1){
-                System.out.println("Please enter a valid input,i.e.,y(lowercase) for Yes or n(lowercase) for no");
+                System.out.println("Please enter a valid input,i.e.,y(lowercase) for Yes or n(lowercase) for No");
                 continue;
             }
             if(at=='y'){
@@ -58,7 +58,7 @@ public class MyContact implements Mycont {
                 break;
             }
             else {
-                System.out.println("Please Enter a Vaild Input i.e., y(lowercase) for Yes or n(lowercase) for No");
+                System.out.println("Please Enter a valid Input i.e., y(lowercase) for Yes or n(lowercase) for No");
             }
         }
         return contactNumbers;
@@ -123,7 +123,7 @@ public class MyContact implements Mycont {
         newContact = new Person(firstname, lastname, Email, contactNumbers);
         int index = compareFirstName(firstname);
         MyContactBook.add(newContact, index);
-        System.out.println("Contact Added SuccessFully");
+        System.out.println("Contact Added Successfully");
         System.out.println();
         System.out.println();
     }
@@ -156,17 +156,17 @@ public class MyContact implements Mycont {
         try {
             int index = sc.nextInt();
             if (index > MyContactBook.size || index == 0) {
-                System.out.println("Invaild Input");
+                System.out.println("Invalid Input");
             }
             else {
                 Person p = MyContactBook.getData(index - 1);
                 String name = p.getFirstName() + p.getLastName();
                 MyContactBook.remove(index - 1);
-                System.out.println(name + "'s Contact has been removed Successfully");
+                System.out.println(name + "'s Contact has been removed successfully");
             }
         }
         catch (InputMismatchException E) {
-            System.out.println("Integer input expected ");
+            System.out.println("Integer input expected");
         }
     }
 
